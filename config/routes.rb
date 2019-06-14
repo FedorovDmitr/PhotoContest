@@ -10,10 +10,6 @@ Rails.application.routes.draw do
   get '/auth', to: 'pages#auth'
   get '/about', to: 'pages#about'
   
-  devise_scope :user do
-    delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
-  end
-
-
+ 
 end
 
