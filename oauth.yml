@@ -1,0 +1,18 @@
+development: &defaults
+  :vkontakte:
+    :app_id: 1111111
+    :app_secret: 11111111111111111111
+    :app_permissions: "notify,wall,offline"
+
+test:
+  <<: *defaults
+
+staging:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  :vkontakte:
+    :app_id: 7021512
+    :app_secret: cUJv5XZv0kpF4g1hCbGK
+    :app_permissions: "notify,wall,offline"
