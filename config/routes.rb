@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'users/new'
+  get 'users/show'
+  get 'users/index'
   namespace :users do
     get 'omniauth_callbacks/vkontakte'
   end
