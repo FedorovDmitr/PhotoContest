@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   end
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :users, :only => [:index, :destroy]
+
+  # devise_scope :user do
+  #   delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  # end
   
   root 'pages#home'
   get '/home', to: 'pages#home'

@@ -260,8 +260,13 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  OAUTH_CREDENTIALS_PATH = "#{ENV['HOME']}/PhotoContest/oauth.yml"
-  OAUTH_CREDENTIALS = YAML.load_file(OAUTH_CREDENTIALS_PATH)[Rails.env]
+  config.omniauth :vkontakte, ENV['API_KEY'], ENV['API_SECRET'],
+                   scope: 'photos',
+                   display: 'popup',
+                   lang: 'ru',
+                   https: 1,
+                   image_size: 'original',
+                   info_fields: 'id,first_name,last_name'
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
