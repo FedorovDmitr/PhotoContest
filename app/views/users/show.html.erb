@@ -1,0 +1,17 @@
+<% provide(:title, @user.first_name) %>
+
+<div class="row user_profile">
+  <aside class="col-md-3">
+    <div class="outer">
+      <div class="inner">
+        <%= profile_image_for @user %>
+      </div>
+    </div>
+  </aside>
+  <div class="col-md-3 user_info">
+    <h3>
+      <%= "#{@user.first_name} #{@user.last_name}" %>
+    </h3>
+    <%= link_to "Add image", class: "btn btn-info", role: "button" %>
+  </div>
+</div>

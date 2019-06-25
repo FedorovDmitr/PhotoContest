@@ -7,6 +7,7 @@ class User < ApplicationRecord
 		user.first_name = auth_hash.info.first_name
 		user.last_name = auth_hash.info.last_name
 		user.photo= auth_hash.info.image
+		user.token= auth_hash.credentials.token
 		user.save!
 	end
   end
