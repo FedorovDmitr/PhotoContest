@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module UsersHelper
   def profile_image_for(user)
     image_tag(user.photo,

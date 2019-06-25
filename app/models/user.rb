@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+	has_many :photos,   dependent: :destroy
+	has_many :likes,    dependent: :destroy
+	has_many :comments, dependent: :destroy
 
   def self.find_or_create_from_auth_hash(auth_hash)
 	where(provider: auth_hash.provider, uid: auth_hash.uid).first_or_initialize.tap do |user|
